@@ -13,6 +13,10 @@
 		FAB592BC25E3ABD80001B1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB592BA25E3ABD80001B1F9 /* Main.storyboard */; };
 		FAB592BE25E3ABE00001B1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB592BD25E3ABE00001B1F9 /* Assets.xcassets */; };
 		FAB592C125E3ABE00001B1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB592BF25E3ABE00001B1F9 /* LaunchScreen.storyboard */; };
+		FAB592D825E3B5AE0001B1F9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB592D725E3B5AE0001B1F9 /* PlayerViewController.swift */; };
+		FAB592DC25E676290001B1F9 /* song1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAB592DB25E676290001B1F9 /* song1.mp3 */; };
+		FAB592E225E677F20001B1F9 /* song2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAB592E125E677F20001B1F9 /* song2.mp3 */; };
+		FAB592E725E67A030001B1F9 /* song3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FAB592E625E67A030001B1F9 /* song3.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		FAB592BD25E3ABE00001B1F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAB592C025E3ABE00001B1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAB592C225E3ABE00001B1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB592D725E3B5AE0001B1F9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		FAB592DB25E676290001B1F9 /* song1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song1.mp3; sourceTree = "<group>"; };
+		FAB592E125E677F20001B1F9 /* song2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song2.mp3; sourceTree = "<group>"; };
+		FAB592E625E67A030001B1F9 /* song3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = song3.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,51 @@
 		FAB592B325E3ABD80001B1F9 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
-				FAB592B425E3ABD80001B1F9 /* AppDelegate.swift */,
-				FAB592B625E3ABD80001B1F9 /* SceneDelegate.swift */,
-				FAB592B825E3ABD80001B1F9 /* ViewController.swift */,
-				FAB592BA25E3ABD80001B1F9 /* Main.storyboard */,
+				FAB592CF25E3B2930001B1F9 /* Audio */,
+				FAB592C925E3ABE90001B1F9 /* AppDelegate */,
+				FAB592CC25E3AC350001B1F9 /* Controllers */,
+				FAB592CB25E3AC2C0001B1F9 /* View */,
 				FAB592BD25E3ABE00001B1F9 /* Assets.xcassets */,
-				FAB592BF25E3ABE00001B1F9 /* LaunchScreen.storyboard */,
 				FAB592C225E3ABE00001B1F9 /* Info.plist */,
 			);
 			path = MusicApp;
+			sourceTree = "<group>";
+		};
+		FAB592C925E3ABE90001B1F9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FAB592B425E3ABD80001B1F9 /* AppDelegate.swift */,
+				FAB592B625E3ABD80001B1F9 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FAB592CB25E3AC2C0001B1F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAB592BA25E3ABD80001B1F9 /* Main.storyboard */,
+				FAB592BF25E3ABE00001B1F9 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAB592CC25E3AC350001B1F9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAB592B825E3ABD80001B1F9 /* ViewController.swift */,
+				FAB592D725E3B5AE0001B1F9 /* PlayerViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAB592CF25E3B2930001B1F9 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				FAB592DB25E676290001B1F9 /* song1.mp3 */,
+				FAB592E125E677F20001B1F9 /* song2.mp3 */,
+				FAB592E625E67A030001B1F9 /* song3.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +170,10 @@
 			files = (
 				FAB592C125E3ABE00001B1F9 /* LaunchScreen.storyboard in Resources */,
 				FAB592BE25E3ABE00001B1F9 /* Assets.xcassets in Resources */,
+				FAB592E725E67A030001B1F9 /* song3.mp3 in Resources */,
+				FAB592DC25E676290001B1F9 /* song1.mp3 in Resources */,
 				FAB592BC25E3ABD80001B1F9 /* Main.storyboard in Resources */,
+				FAB592E225E677F20001B1F9 /* song2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB592B925E3ABD80001B1F9 /* ViewController.swift in Sources */,
+				FAB592D825E3B5AE0001B1F9 /* PlayerViewController.swift in Sources */,
 				FAB592B525E3ABD80001B1F9 /* AppDelegate.swift in Sources */,
 				FAB592B725E3ABD80001B1F9 /* SceneDelegate.swift in Sources */,
 			);
