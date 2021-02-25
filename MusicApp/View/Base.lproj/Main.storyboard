@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="isU-9B-iFP" detailTextLabel="Jfg-zF-JfE" style="IBUITableViewCellStyleSubtitle" id="c4w-dL-Dhl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cellID" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="isU-9B-iFP" detailTextLabel="Jfg-zF-JfE" style="IBUITableViewCellStyleSubtitle" id="c4w-dL-Dhl">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c4w-dL-Dhl" id="fQn-ST-WUy">
@@ -65,26 +65,29 @@
             </objects>
             <point key="canvasLocation" x="659" y="70"/>
         </scene>
-        <!--Player View Controller-->
+        <!--Player-->
         <scene sceneID="jax-Sj-DGY">
             <objects>
-                <viewController storyboardIdentifier="player" id="Isb-Qi-pRa" customClass="PlayerViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="player" title="Player" id="Isb-Qi-pRa" customClass="PlayerViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Liu-pt-C7w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKT-wk-Ad7">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKT-wk-Ad7" customClass="GradientView" customModule="MusicApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZoH-hW-Nup"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PKT-wk-Ad7" firstAttribute="trailing" secondItem="ZoH-hW-Nup" secondAttribute="trailing" id="6oM-n2-3mS"/>
                             <constraint firstAttribute="bottom" secondItem="PKT-wk-Ad7" secondAttribute="bottom" id="Oua-mh-X5C"/>
+                            <constraint firstItem="PKT-wk-Ad7" firstAttribute="leading" secondItem="ZoH-hW-Nup" secondAttribute="leading" id="Vic-Wr-9mX"/>
                             <constraint firstItem="PKT-wk-Ad7" firstAttribute="top" secondItem="Liu-pt-C7w" secondAttribute="top" id="kEM-NN-U2T"/>
                             <constraint firstItem="PKT-wk-Ad7" firstAttribute="leading" secondItem="ZoH-hW-Nup" secondAttribute="leading" id="kYq-HE-M72"/>
                             <constraint firstItem="PKT-wk-Ad7" firstAttribute="trailing" secondItem="ZoH-hW-Nup" secondAttribute="trailing" id="ncB-1o-J6Q"/>
+                            <constraint firstAttribute="bottom" secondItem="PKT-wk-Ad7" secondAttribute="bottom" id="xoC-gR-qAE"/>
+                            <constraint firstItem="PKT-wk-Ad7" firstAttribute="top" secondItem="Liu-pt-C7w" secondAttribute="top" id="xwM-nd-KTs"/>
                         </constraints>
                     </view>
                     <connections>

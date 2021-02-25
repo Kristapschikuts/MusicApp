@@ -19,6 +19,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSongs()
+        setupView()
         table.delegate = self
         table.dataSource = self
     }
@@ -56,6 +57,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                           trackName: "song3"))
        
     }
+    
+    private func setupView(){
+        view.backgroundColor = .secondarySystemBackground
+        setupNavigationBar()
+    }
 
     // Table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,6 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let song = songs[indexPath.row]
         
@@ -92,8 +99,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         vc.position = position
         present(vc, animated: true)
     }
-
     
+    private func setupNavigationBar(){
+            
+            if #available(iOS 13.0, *){
+            let titleImage = UIImage(systemName: "music.note")
+            let imageView = UIImageView(image: titleImage)
+            self.navigationItem.titleView = imageView
+            }
+            
+            navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor : UIColor.black]
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.black]
+            
+            navigationController?.navigationBar.barTintColor = .white
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.tintColor = .black
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Info", style: .plain, target: self, action: #selector(infoItemTapped))
+        }
+        
+        @objc private func infoItemTapped() {
+            print("Info tapped")
+         basicAlert(title: "Info", message: "This App is made as final app for IOS Bootcamp!")
+        }
+    }
+
+extension ViewController{
+    private func basicAlert(title: String?, message: String?) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
 }
 
 struct Song {

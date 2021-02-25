@@ -14,6 +14,8 @@ class PlayerViewController: UIViewController {
 
     @IBOutlet var holder: UIView!
     
+
+    
     var player: AVAudioPlayer?
 
     // UI elements
@@ -58,7 +60,7 @@ class PlayerViewController: UIViewController {
     }
     
     func configure() {
-        // set up player
+        // set up playing songs
         let song = songs[position]
 
         let urlString = Bundle.main.path(forResource: song.trackName, ofType: "mp3")
@@ -68,14 +70,14 @@ class PlayerViewController: UIViewController {
             try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
 
             guard let urlString = urlString else {
-                print("urlstring is nil")
+               // print("urlstring is nil")
                 return
             }
 
             player = try AVAudioPlayer(contentsOf: URL(string: urlString)!)
 
             guard let player = player else {
-                print("player is nil")
+                //print("player is nil")
                 return
             }
             player.volume = 0.2
@@ -196,13 +198,13 @@ class PlayerViewController: UIViewController {
             player?.pause()
             // show play button
             playPauseButton.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
-
+            
             // shrink image
             UIView.animate(withDuration: 0.2, animations: {
                 self.albumImageView.frame = CGRect(x: 30,
                                                    y: 30,
-                                                   width: self.holder.frame.size.width-60,
-                                                   height: self.holder.frame.size.width-60)
+                                                   width:self.holder.frame.size.width-60,
+                                                   height:self.holder.frame.size.width-60)
             })
         }
         else {
@@ -214,8 +216,8 @@ class PlayerViewController: UIViewController {
             UIView.animate(withDuration: 0.2, animations: {
                 self.albumImageView.frame = CGRect(x: 10,
                                               y: 10,
-                                              width: self.holder.frame.size.width-20,
-                                              height: self.holder.frame.size.width-20)
+                                              width:self.holder.frame.size.width-20,
+                                              height:self.holder.frame.size.width-20)
             })
         }
     }
@@ -231,5 +233,19 @@ class PlayerViewController: UIViewController {
             player.stop()
         }
     }
+    
+    
+}
+// MARK: - Gradient Player
 
+class GradientView: UIView {
+    override open class var layerClass: AnyClass {
+       return CAGradientLayer.classForCoder()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        let gradientLayer = layer as! CAGradientLayer
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.white.cgColor]
+    }
 }
